@@ -41,6 +41,7 @@
       @include flex(column);
     };
 
+
     .cta-buttons {
       @include flex(row, 2em);
       transform: scale(1.2);
@@ -234,10 +235,131 @@ button#see-more-images {
 
 #nominees {
   margin-top: 4em;
+
+  .categories {
+    margin-top: 1em;
+    @include flex(row, $justify: space-between);
+
+    .category {
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #fff;
+      color: #000;
+      font-family: "Nunito", sans-serif;
+      flex: 0 0 23%;
+
+      img {
+        object-fit: cover;
+        max-width: 100%;
+      }
+
+      .category-title {
+        font-weight: 700;
+        font-size: 1.2em;
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
+
+      .category-description {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 0;
+        margin-bottom: 0.3em;
+      }
+    }
+  }
+
+  button#vote-now {
+    @include button("flat", var(--alt), #fff, 8px, 0.75em 2em);
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+
 }
 
-button#vote-now {
-  @include button("flat", var(--alt), #fff, 8px, 0.75em 2em);
-  text-transform: uppercase;
-  font-size: 18px;
+#register {
+  text-align: center;
+  margin-top: 2em;
+  @include flex(column, 1.8em);
+  padding-top: 3em;
+  padding-bottom: 2em;
+  background-color: #122740;
+
+  *{
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 1.45em;
+  }
+
+  .register-buttons {
+    @include flex(row, 2em, $justify: center);
+    transform: scale(1.2);
+  }
+}
+
+#faq {
+  text-align: center;
+
+  button {
+    @include button("outline", #fff, #fff, 8px, 0.75em 2em);
+    @include flex(row, $justify: space-between);
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.2em;
+
+    img {
+      transition: 0.3s;
+    }
+  }
+
+  padding-bottom: 5em;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 30%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  // transition: 0.4s;
+}
+
+.active {
+  border-bottom: none!important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.panel {
+  font-family: "Nunito", sans-serif;
+  padding: 0 18px;
+  width: 30%;
+  // background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border: 1px solid #fff;
+  border-top: none;
+  border-radius: 8px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.collapsed {
+  // display: none;
+  // border: 1px solid black;
+  // color: black;
+}
+
+.accordion-container {
+  @include flex(column, 0 center);
+  align-items: center;
+  margin-top: 1em;
 }
