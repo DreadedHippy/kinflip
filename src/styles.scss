@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import './theme/variables.scss';
+
+// Google fonts imports
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+
+$alt: #FFBC01;
+
+//Styles
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: #121212;
+  color: #fff;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: "Lora", serif;
+  overflow-x: hidden;
+}
+
+[color='alt']{
+  color: $alt;
+}

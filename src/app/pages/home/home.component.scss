@@ -1,0 +1,243 @@
+@import '../../../theme/mixins';
+@import '../../../theme/variables.scss';
+
+
+//Global Classes
+* {
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  top: 5em;
+  margin: 0 auto;
+  width: 86.1%;
+}
+
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+}
+
+// Code
+
+.subtitle {
+  text-align: center;
+}
+
+#hero {
+  padding: 0 1em;
+  background-color: rgba($color: #000, $alpha: 0.8);
+  .hero-info {
+    @include flex(row, $justify: space-between);
+  }
+  .cta {
+    // @include debug;
+    width: 59.8%;
+
+    .cta-text {
+      width: 83.9%;
+      @include flex(column);
+    };
+
+    .cta-buttons {
+      @include flex(row, 2em);
+      transform: scale(1.2);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+    }
+  }
+
+  .timer {
+    // @include debug;
+    flex: 0.9;
+    text-align: center;
+    padding-top: 3em;
+
+    p {
+      font-size: 3em;
+      text-transform: uppercase;
+    };
+    .countdown {
+      @include flex(row, 0.9em, center);
+      .days, .hours, .minutes {
+        @include flex(column, $justify: center);
+      }
+
+      .minutes {
+        .counter {
+          p {background-color: #12274080;}
+        }
+      };
+
+      caption {
+        font-family: "Nunito", sans-serif;
+        width: 100%;
+        margin: 0 auto;
+        // @include debug
+      }
+    }
+  }
+
+  div#hero-image {
+    margin: 3em auto 0;
+    img {
+      height: 720px;
+      // box-sizing: border-box;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.main-text {
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+.bottom-text {
+  font-size: 1.5em;
+}
+
+.counter {
+  width: 100px;
+  margin: 0 auto;
+  font-family: "Nunito", sans-serif;
+
+  p {
+    font-weight: 900;
+    display: table-row;
+    background-color: #122740;
+  }
+
+  span {
+    display: table-cell;
+    border: 4px solid black;
+    padding: 10px;
+  }
+}
+
+#sponsors {
+  @include flex(row, 1em, space-between, wrap);
+
+  img {
+    height: 66.67px;
+    object-fit: contain;
+  }
+}
+
+#partners {@extend #sponsors}
+
+#about {
+  text-align: center;
+
+  p.content {
+    font-family: "Nunito", sans-serif;
+  }
+}
+
+#stats {
+  @include flex(row, $justify: space-between);
+  background-color: #000;
+  padding: 1.75em;
+  margin-top: 5em;
+
+  .stat {
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+
+    img {
+      width: 5em;
+      object-fit: contain;
+    }
+
+    p {
+     margin-top: 0;
+    }
+  }
+}
+
+
+.lineup {
+  @include flex(row, $wrap: wrap, $justify: space-between);
+
+  .speaker {
+    text-align: center;
+    flex: 1 1 33.333%;
+    font-family: "Nunito", sans-serif;
+
+    img {
+      object-fit: contain;
+      width: 20em;
+    }
+
+    .name {
+      font-size: 2em;
+      text-transform: capitalize;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .info {
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+.gallery-container {
+  @include flex(row, 1em, center);
+  height: 40em;
+  margin-bottom: 1em;
+
+  .gallery-sub-container {
+    max-height: 39em;
+    @include flex(column, 1em);
+
+    img {
+      object-fit: cover;
+      height: 50%;
+      max-height: 50%;
+      flex: 0 1;
+    }
+  }
+
+  .staggered {
+    img:first-child {
+      height: 40%;
+      max-height: 40%;
+    }
+
+
+    img:last-child {
+      height: 60%;
+      max-height: 60%;
+    }
+  }
+
+}
+
+button#see-more-images {
+  @include button("outline", var(--alt), var(--alt), 8px, 0.75em 2em);
+  margin: 0 auto;
+  font-size: 18px;
+  img {
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+}
+
+#gallery, #nominees {
+  text-align: center;
+}
+
+#nominees {
+  margin-top: 4em;
+}
+
+button#vote-now {
+  @include button("flat", var(--alt), #fff, 8px, 0.75em 2em);
+  text-transform: uppercase;
+  font-size: 18px;
+}

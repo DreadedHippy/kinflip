@@ -1,0 +1,5 @@
+@import '../../../theme/mixins';
+
+#attendee-button {
+  @include button("flat", var(--alt), #fff, 8px, 0.75em 2em);
+}

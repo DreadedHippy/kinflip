@@ -1,0 +1,29 @@
+@mixin button($type, $bg-color, $text-color: #fff, $border-radius: 0, $padding){
+  @if $type == "flat" {
+    border: none;
+    background-color: $bg-color;
+  } @else if $type == "outline" {
+    border: 1px solid $bg-color;
+    background-color: transparent;
+  }
+  border-radius: $border-radius;
+  padding: $padding;
+  font-weight: 500;
+  color: $text-color;
+  font-family: "Lora", serif;
+}
+
+@mixin flex($direction, $gap: normal normal, $justify: flex-start, $wrap: nowrap ) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+@mixin debug {
+  border: 1px solid red;
+}
+
+
+

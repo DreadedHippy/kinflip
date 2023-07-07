@@ -1,0 +1,5 @@
+@import '../../../theme/mixins';
+
+#speaker-button {
+  @include button("outline", var(--alt), #fff, 8px, 0.75em 2em);
+}
