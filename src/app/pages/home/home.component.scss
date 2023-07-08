@@ -323,7 +323,7 @@ button#see-more-images {
   color: #444;
   cursor: pointer;
   padding: 18px;
-  min-width: 30%;
+  width: 30%;
   border: none;
   text-align: left;
   outline: none;
@@ -404,6 +404,10 @@ button#see-more-images {
       height: auto;
       // margin-bottom:  0;
     }
+  }
+
+  .accordion, .panel {
+    width: 40%;
   }
 
 }
