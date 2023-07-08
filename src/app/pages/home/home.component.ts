@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit{
       acc[i].addEventListener("click", function() {
         acc[i].classList.toggle("active");
         var panel: any = acc[i].nextElementSibling;
+        panel.classList.toggle("collapsed");
         if (panel.style.maxHeight) {
           panel.style.maxHeight = null;
           panel.classList.add("collapsed")

@@ -23,32 +23,23 @@
   }
 }
 
-// Tablets, Ipad, Portrait Mode
-@media (min-width: 768px) and (max-width: 1024px){
-  #navbar {
-    display: none;
+#registrations {
+  margin-left: auto;
+  @include button("flat", var(--alt), $padding: 1em 1em, $border-radius: 4px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+  width: 8em;
+  height: 3em;
+
+  option {
+    font-size: 0.4rem;
+    background-color: transparent !important;
+    border: 1px solid black;
   }
-
-  #registrations {
-    // display: block;
-    margin-left: auto;
-    @include button("flat", var(--alt), $padding: 1em 1em, $border-radius: 4px);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 50%;
-    width: 8em;
-    height: 3em;
-
-    option {
-      font-size: 0.4rem;
-      background-color: transparent !important;
-      border: 1px solid black;
-    }
-  }
-
 }
 
 #menu-button {
@@ -61,3 +52,40 @@
   width: 3rem;
   height: 3rem;
 }
+
+#menu-button, #menu-icon, #registrations {
+  display: none;
+}
+
+
+
+//! MEDIA QUERIES
+
+//? Tablets, Ipad, Portrait Mode
+@media (min-width: 768px) and (max-width: 1024px){
+  #navbar {
+    display: none;
+  }
+
+  #menu-button, #menu-icon, #registrations {
+    display: block;
+  }
+}
+
+//? Media Query for Mobile Devices
+@media (max-width: 480px) {
+  .container {
+    padding: 1em 1.5em;
+    @include flex(row, $justify: space-between)
+  }
+
+  #navbar {
+    display: none;
+  }
+
+  #menu-button, #menu-icon {
+    display: block;
+  }
+}
+
+

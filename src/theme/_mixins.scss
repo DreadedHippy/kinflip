@@ -21,8 +21,8 @@
   flex-wrap: $wrap;
 }
 
-@mixin debug {
-  border: 1px solid red;
+@mixin debug($color: red) {
+  border: 1px solid $color;
 }
 
 

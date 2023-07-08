@@ -6,6 +6,7 @@
 * {
   box-sizing: border-box;
 }
+
 .container {
   position: relative;
   top: 5em;
@@ -13,17 +14,18 @@
   width: 86.1%;
 }
 
-
 .title {
   width: 100%;
   text-align: center;
   font-size: 2em;
 }
 
-// Code
-
 .subtitle {
   text-align: center;
+}
+
+.register-for-free {
+  display: none;
 }
 
 #hero {
@@ -39,6 +41,15 @@
     .cta-text {
       width: 83.9%;
       @include flex(column);
+
+      .main-text {
+        font-size: 4em;
+        margin-bottom: 0;
+      }
+
+      .bottom-text {
+        font-size: 1.5em;
+      }
     };
 
 
@@ -56,10 +67,14 @@
     text-align: center;
     padding-top: 3em;
 
-    p {
+    .timer-text {
       font-size: 3em;
       text-transform: uppercase;
     };
+
+    p {
+      font-size: 3em;
+    }
     .countdown {
       @include flex(row, 0.9em, center);
       .days, .hours, .minutes {
@@ -92,15 +107,6 @@
   }
 }
 
-.main-text {
-  font-size: 4em;
-  margin-bottom: 0;
-}
-
-.bottom-text {
-  font-size: 1.5em;
-}
-
 .counter {
   width: 100px;
   margin: 0 auto;
@@ -119,16 +125,19 @@
   }
 }
 
-#sponsors {
-  @include flex(row, 1em, space-between, wrap);
+#sponsors, #partners {
+  @include flex(column, 1em, space-between, wrap);
 
   img {
     height: 66.67px;
     object-fit: contain;
   }
-}
 
-#partners {@extend #sponsors}
+  .logos {
+    @include flex(row, $justify: space-between);
+    width: 100%;
+  }
+}
 
 #about {
   text-align: center;
@@ -353,9 +362,7 @@ button#see-more-images {
 }
 
 .collapsed {
-  // display: none;
-  // border: 1px solid black;
-  // color: black;
+  opacity: 0;
 }
 
 .accordion-container {
@@ -364,7 +371,9 @@ button#see-more-images {
   margin-top: 1em;
 }
 
-// Tablets, Ipad, Portrait Mode
+//!Media Queries
+
+//? Tablets, Ipad, Portrait Mode
 @media (min-width: 768px) and (max-width: 1024px){
 
   #hero {
@@ -410,4 +419,190 @@ button#see-more-images {
     width: 40%;
   }
 
+}
+
+//? Media Query for Mobile Devices
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    top: 1em;
+  }
+
+  .register-for-free {
+    @include button("flat", var(--alt), #fff, 8px, 0.75em 2em);
+    display: block;
+    width: auto !important;
+  }
+
+
+  #hero-image {
+    img {
+      max-height: 500px;
+      object-fit: cover !important;
+    }
+  }
+
+  #hero {
+    margin-top: none;
+    width: 100%;
+
+    .hero-info {
+      @include flex(column, 1em, center);
+      align-items: center;
+    }
+
+    .cta {
+      @include flex(column, 1em, center);
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+
+      .cta-text {
+        margin: 0 auto;
+        width: 100%;
+
+        .main-text {
+          font-size: 2.2em !important;
+          margin-bottom: 0;
+        }
+
+        .bottom-text {
+          font-size: 1em;
+          font-family: "Nunito", sans-serif;
+          line-height: 2em;
+        }
+      }
+
+      .cta-buttons {
+        display: none;
+      }
+    }
+
+    .timer {
+      padding-top: 0.2em !important;
+
+      .timer-text {
+        font-family: "Nunito", sans-serif;
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 2em;
+      }
+    }
+  }
+
+  #sponsors, #partners {
+    .logos {
+      width: 100%;
+      @include flex(row, $justify: space-between);
+      flex-wrap: nowrap;
+
+      img {
+        height: 4em;
+      }
+    }
+  }
+
+  #sponsors, #partners, #about, #speakers, #register {
+    margin-top: 2em;
+    .title {
+      font-weight: 500;
+    }
+    .subtitle {
+      display: none;
+    }
+  }
+
+  #about {
+    margin-top: 3em;
+    padding: 0 1.2em;
+
+    .content {
+      line-height: 1.5em;
+      .more-content {
+        display: none;
+      }
+
+    }
+  }
+
+
+  #gallery {
+    max-width: 100%;
+    overflow: hidden;
+
+    .gallery-container {
+      overflow: auto;
+      height: auto;
+      width: 100%;
+      // margin-bottom:  0;
+
+      .gallery-sub-container {
+        max-width: 30%;
+      }
+    }
+  }
+
+  #nominees {
+    display: none;
+  }
+
+
+
+  .speaker {
+    text-align: center;
+    flex: 1 1 40%;
+    font-family: "Nunito", sans-serif;
+
+    img {
+      object-fit: contain;
+      width: 10em !important;
+    }
+
+    .name {
+      font-size: 2em;
+      text-transform: capitalize;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .info {
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
+  }
+
+  #register {
+    p:first-of-type {
+      padding: 0 24%;
+    }
+
+    p:last-of-type {
+      padding: 0 15%;
+    }
+
+    .subtitle {
+      display: block;
+      font-family: "Nunito", sans-serif;
+      font-size: 1em;
+    }
+
+    .register-buttons {
+      display: none;
+    }
+
+    .register-for-free {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+
+
+  .accordion, .panel {
+    width: 80%;
+  }
 }
