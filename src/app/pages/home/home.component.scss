@@ -323,7 +323,7 @@ button#see-more-images {
   color: #444;
   cursor: pointer;
   padding: 18px;
-  width: 30%;
+  min-width: 30%;
   border: none;
   text-align: left;
   outline: none;
@@ -362,4 +362,48 @@ button#see-more-images {
   @include flex(column, 0 center);
   align-items: center;
   margin-top: 1em;
+}
+
+// Tablets, Ipad, Portrait Mode
+@media (min-width: 768px) and (max-width: 1024px){
+
+  #hero {
+
+    .hero-info {
+      @include flex(column, 1em, center);
+      align-items: center
+    }
+
+    .cta {
+      @include flex(column, 1em, center);
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+
+      .cta-text {
+        margin: 0 auto;
+      }
+
+      .cta-buttons {
+        transform-origin: 50% 50%;
+        @include flex(row, 2em, $justify: center);
+        max-width: 100%;
+      }
+    }
+  }
+
+  #gallery {
+    max-width: 100%;
+    * {
+      max-width: 100%;
+    }
+
+    .gallery-container {
+      height: auto;
+      // margin-bottom:  0;
+    }
+  }
+
 }
