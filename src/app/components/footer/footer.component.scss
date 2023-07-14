@@ -1,0 +1,67 @@
+@import '../../../theme/mixins';
+@import '../../../theme/variables.scss';
+
+#container {
+  margin-top: 2em;
+  background-color: #000;
+  padding: 1em 6.25em;
+  font-family: "Nunito", sans-serif;
+}
+
+#main-logo {
+  object-fit: contain;
+  width: 10.75em;
+}
+
+#footer-flex {
+  @include flex(row, $gap: 1em, $justify: space-between);
+  p {
+    color: $secondary;
+  }
+}
+
+#subscription-cta {
+  @include flex(row, $justify: center);
+  border-radius: 4px;
+  background-color: #fff;
+  padding:  0.7em 1.14em 0.7em 2.28em;
+
+  button {
+    @include button("flat", $secondary, #fff, 4px, 10px);
+    font-family: "Nunito", sans-serif;
+  }
+
+  input {
+    border: none;
+    width: 100%;
+    margin-right: 1.5em;
+    color: $secondary;
+  }
+
+  input::placeholder {
+    color: $secondary;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.2em;
+    opacity: 0.5;
+  }
+}
+
+hr {
+  border: 1px solid $secondary;
+  width: 108%;
+  margin-left: -4%;
+}
+
+#details-flex {
+  @include flex(row, space-between);
+  align-items: center;
+
+  .icons {
+    @include flex(row, $gap: 0.5em);
+
+    img {
+      height: 1.17em;
+      width: 1.17em;
+    }
+  }
+}

@@ -32,7 +32,7 @@
   padding: 0 1em;
   background-color: rgba($color: #000, $alpha: 0.8);
   .hero-info {
-    @include flex(row, $justify: space-between);
+    @include flex(row, space-between);
   }
   .cta {
     // @include debug;
@@ -45,9 +45,12 @@
       .main-text {
         font-size: 4em;
         margin-bottom: 0;
+        white-space: nowrap;
+        line-height: 0;
       }
 
       .bottom-text {
+        margin-top: 3em;
         font-size: 1.5em;
       }
     };
@@ -78,7 +81,7 @@
     .countdown {
       @include flex(row, 0.9em, center);
       .days, .hours, .minutes {
-        @include flex(column, $justify: center);
+        @include flex(column, center);
       }
 
       .minutes {
@@ -134,7 +137,7 @@
   }
 
   .logos {
-    @include flex(row, $justify: space-between);
+    @include flex(row, space-between);
     width: 100%;
   }
 }
@@ -148,7 +151,7 @@
 }
 
 #stats {
-  @include flex(row, $justify: space-between);
+  @include flex(row, space-between);
   background-color: #000;
   padding: 1.75em;
   margin-top: 5em;
@@ -247,7 +250,7 @@ button#see-more-images {
 
   .categories {
     margin-top: 1em;
-    @include flex(row, $justify: space-between);
+    @include flex(row, space-between);
 
     .category {
       border-radius: 8px;
@@ -304,7 +307,7 @@ button#see-more-images {
   }
 
   .register-buttons {
-    @include flex(row, 2em, $justify: center);
+    @include flex(row, 2em, center);
     transform: scale(1.2);
   }
 }
@@ -314,7 +317,7 @@ button#see-more-images {
 
   button {
     @include button("outline", #fff, #fff, 8px, 0.75em 2em);
-    @include flex(row, $justify: space-between);
+    @include flex(row, space-between);
     align-items: center;
     font-family: "Nunito", sans-serif;
     font-size: 1.2em;
@@ -397,7 +400,7 @@ button#see-more-images {
 
       .cta-buttons {
         transform-origin: 50% 50%;
-        @include flex(row, 2em, $justify: center);
+        @include flex(row, center, 2em);
         max-width: 100%;
       }
     }
@@ -466,6 +469,8 @@ button#see-more-images {
         .main-text {
           font-size: 2.2em !important;
           margin-bottom: 0;
+          white-space: nowrap;
+          line-height: 0;
         }
 
         .bottom-text {
@@ -497,7 +502,7 @@ button#see-more-images {
   #sponsors, #partners {
     .logos {
       width: 100%;
-      @include flex(row, $justify: space-between);
+      @include flex(row, space-between);
       flex-wrap: nowrap;
 
       img {

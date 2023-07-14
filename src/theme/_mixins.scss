@@ -13,7 +13,7 @@
   font-family: "Lora", serif;
 }
 
-@mixin flex($direction, $gap: normal normal, $justify: flex-start, $wrap: nowrap ) {
+@mixin flex($direction, $justify: flex-start,  $gap: normal normal,$wrap: nowrap ) {
   display: flex;
   flex-direction: $direction;
   gap: $gap;
