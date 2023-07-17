@@ -307,7 +307,8 @@ button#see-more-images {
   }
 
   .register-buttons {
-    @include flex(row, 2em, center);
+    @include flex(row, center, 2em);
+    margin-top: 1em;
     transform: scale(1.2);
   }
 }
@@ -601,7 +602,7 @@ button#see-more-images {
 
     .register-for-free {
       max-width: 70%;
-      margin: 0 auto;
+      margin: 1em auto;
     }
   }
 
