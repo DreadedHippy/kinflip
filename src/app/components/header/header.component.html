@@ -15,9 +15,39 @@
     <option value="speaker">Register as speaker</option>
   </select>
 
-  <button id="menu-button">
+  <button id="menu-button" (click)="openMenu()">
     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
       <path fill="none" stroke="#FFBC01" stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88 152h336M88 256h336M88 360h336"/>
     </svg>
   </button>
+
+  <div id="menu">
+    <button id="cancel" (click)="closeMenu()">
+      <img src="../../../assets/icons/Cancel.png" alt="Cancel button">
+    </button>
+    <div class="searchbar">
+      <input type="search" placeholder="Search for a Keyword...">
+      <button id="search">
+        <img src="../../../assets/icons/Icons.png" alt="Search button">
+      </button>
+    </div>
+
+    <ul style="list-style-type: none;">
+      <li>Home</li>
+      <li>FAQ</li>
+      <li>Contact Us</li>
+      <li>Newsletter</li>
+      <li>About Us</li>
+      <li>Mission And Vision</li>
+    </ul>
+
+    <div class="icons">
+      <img src="../../../assets/icons/facebook_icon.png" alt="Facebook Icon">
+      <img src="../../../assets/icons/twitter_icon.png" alt="Twitter Icon">
+      <img src="../../../assets/icons/instagram_icon.png" alt="Instagram Icon">
+      <img src="../../../assets/icons/linkedin_icon.png" alt="Linkedin Icon">
+      <img src="../../../assets/icons/pinterest_icon.png" alt="Pinterest Icon">
+    </div>
+
+  </div>
 </div>

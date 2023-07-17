@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-attendee',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./attendee.component.scss']
 })
 export class AttendeeComponent {
+
+  constructor(private router: Router) {
+
+  }
   nameInput = "";
   emailInput = "";
   showSuccessPopUp(){
@@ -27,5 +32,7 @@ export class AttendeeComponent {
       popup.style.opacity = "0";
       popup.style.visibility = "hidden"
     }
+
+    this.router.navigate(['/'])
   }
 }
