@@ -7,6 +7,7 @@ import { ComponentsModule } from './components/components.module';
 import { HomeComponent } from './pages/home/home.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { SpeakerComponent } from './pages/speaker/speaker.component';
+import { AttendeeComponent } from './pages/attendee/attendee.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SpeakerComponent } from './pages/speaker/speaker.component';
     HomeComponent,
     FaqComponent,
     SpeakerComponent,
+    AttendeeComponent,
   ],
   imports: [
     BrowserModule,
