@@ -11,6 +11,8 @@
   font-weight: 500;
   color: $text-color;
   font-family: "Lora", serif;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 @mixin flex($direction, $justify: flex-start,  $gap: normal normal,$wrap: nowrap ) {

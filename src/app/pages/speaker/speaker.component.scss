@@ -1,0 +1,83 @@
+@import '../../../theme/mixins';
+@import '../../../theme/variables.scss';
+
+* {
+  box-sizing: border-box
+}
+
+#speaker-registration-form {
+  @include flex(row, center, 2em, wrap);
+  // @include debug;
+  margin: 0 auto;
+  width: 60%;
+
+  input {
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    flex: 0 1 40%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    height: 2.8em;
+    margin-top: 3em;
+    padding-left: 1em;
+  }
+
+  input::placeholder {
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+
+    button {
+      @include button("flat", $alt, #fff, 4px, 1em 2.3em);
+      width: 50%;
+    }
+
+    button:hover {
+      background-color: $alt-tint;
+      color:#565656;
+    }
+
+    p {
+      color: #ffffffbb;
+    }
+    a {
+      color: $alt;
+    }
+  }
+
+  margin-top: 2em;
+}
+
+@media (max-width: 480px) {
+  #speaker-registration-form {
+    width: 100%;
+    padding: 0 2em;
+
+    input {
+      flex: 1 1;
+      margin-top: 1em;
+    }
+
+    .cta {
+      margin-top: -1.5em;
+
+      button {
+        width: 100%;
+      }
+
+      p {
+        margin-top: 2em;
+      }
+
+    }
+  }
+}

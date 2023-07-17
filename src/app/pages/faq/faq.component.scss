@@ -1,0 +1,15 @@
+@import '../../../theme/variables.scss';
+
+hr {
+  border: 1px solid $secondary;
+  width: 90%;
+  margin-top: 2em;
+  margin-bottom: -2em;
+  display: none;
+}
+
+@media (max-width: 480px) {
+  hr {
+    display: block;
+  }
+}
