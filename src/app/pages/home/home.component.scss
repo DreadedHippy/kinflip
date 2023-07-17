@@ -57,7 +57,7 @@
 
 
     .cta-buttons {
-      @include flex(row, 2em);
+      @include flex(row, $gap: 2em);
       transform: scale(1.2);
       transform-origin: 0 0;
       -webkit-transform-origin: 0 0;
@@ -79,7 +79,7 @@
       font-size: 3em;
     }
     .countdown {
-      @include flex(row, 0.9em, center);
+      @include flex(row, center, 0.9em);
       .days, .hours, .minutes {
         @include flex(column, center);
       }
@@ -129,7 +129,7 @@
 }
 
 #sponsors, #partners {
-  @include flex(column, 1em, space-between, wrap);
+  @include flex(column, space-between, 1em, wrap);
 
   img {
     height: 66.67px;
@@ -200,13 +200,13 @@
 }
 
 .gallery-container {
-  @include flex(row, 1em, center);
+  @include flex(row, center, 1em);
   height: 40em;
   margin-bottom: 1em;
 
   .gallery-sub-container {
     max-height: 39em;
-    @include flex(column, 1em);
+    @include flex(column, $gap: 1em);
 
     img {
       object-fit: cover;
@@ -293,7 +293,7 @@ button#see-more-images {
 #register {
   text-align: center;
   margin-top: 2em;
-  @include flex(column, 1.8em);
+  @include flex(column, $gap: 1.8em);
   padding-top: 3em;
   padding-bottom: 2em;
   background-color: #122740;
@@ -313,67 +313,67 @@ button#see-more-images {
   }
 }
 
-#faq {
-  text-align: center;
+// #faq {
+//   text-align: center;
 
-  button {
-    @include button("outline", #fff, #fff, 8px, 0.75em 2em);
-    @include flex(row, space-between);
-    align-items: center;
-    font-family: "Nunito", sans-serif;
-    font-size: 1.2em;
+//   button {
+//     @include button("outline", #fff, #fff, 8px, 0.75em 2em);
+//     @include flex(row, space-between);
+//     align-items: center;
+//     font-family: "Nunito", sans-serif;
+//     font-size: 1.2em;
 
-    img {
-      transition: 0.3s;
-    }
-  }
+//     img {
+//       transition: 0.3s;
+//     }
+//   }
 
-  padding-bottom: 5em;
-}
+//   padding-bottom: 5em;
+// }
 
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 30%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  // transition: 0.4s;
-}
+// .accordion {
+//   background-color: #eee;
+//   color: #444;
+//   cursor: pointer;
+//   padding: 18px;
+//   width: 30%;
+//   border: none;
+//   text-align: left;
+//   outline: none;
+//   font-size: 15px;
+//   // transition: 0.4s;
+// }
 
-.active {
-  border-bottom: none!important;
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-}
+// .active {
+//   border-bottom: none!important;
+//   border-bottom-left-radius: 0 !important;
+//   border-bottom-right-radius: 0 !important;
+// }
 
-.panel {
-  font-family: "Nunito", sans-serif;
-  padding: 0 18px;
-  width: 30%;
-  // background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  border: 1px solid #fff;
-  border-top: none;
-  border-radius: 8px;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
+// .panel {
+//   font-family: "Nunito", sans-serif;
+//   padding: 0 18px;
+//   width: 30%;
+//   // background-color: white;
+//   max-height: 0;
+//   overflow: hidden;
+//   transition: max-height 0.2s ease-out;
+//   border: 1px solid #fff;
+//   border-top: none;
+//   border-radius: 8px;
+//   border-top-right-radius: 0;
+//   border-top-left-radius: 0;
+// }
 
-.collapsed {
-  opacity: 0;
-}
+// .collapsed {
+//   opacity: 0;
+// }
 
-.accordion-container {
-  @include flex(column, 0 center);
-  align-items: center;
-  margin-top: 1em;
-}
+// .accordion-container {
+//   @include flex(column, center, 0);
+//   align-items: center;
+//   margin-top: 1em;
+// }
 
 //!Media Queries
 
@@ -383,12 +383,12 @@ button#see-more-images {
   #hero {
 
     .hero-info {
-      @include flex(column, 1em, center);
+      @include flex(column, center, 1em);
       align-items: center
     }
 
     .cta {
-      @include flex(column, 1em, center);
+      @include flex(column, center, 1em);
       align-items: center;
       margin: 0 auto;
       width: 100%;
@@ -419,9 +419,9 @@ button#see-more-images {
     }
   }
 
-  .accordion, .panel {
-    width: 40%;
-  }
+  // .accordion, .panel {
+  //   width: 40%;
+  // }
 
 }
 
@@ -436,6 +436,8 @@ button#see-more-images {
     @include button("flat", var(--alt), #fff, 8px, 0.75em 2em);
     display: block;
     width: auto !important;
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
   }
 
 
@@ -451,12 +453,12 @@ button#see-more-images {
     width: 100%;
 
     .hero-info {
-      @include flex(column, 1em, center);
+      @include flex(column, center, 1em);
       align-items: center;
     }
 
     .cta {
-      @include flex(column, 1em, center);
+      @include flex(column, center, 1em);
       align-items: center;
       margin: 0 auto;
       width: 100%;
@@ -607,8 +609,8 @@ button#see-more-images {
   }
 
 
-
-  .accordion, .panel {
-    width: 80%;
-  }
+  // .accordion, .panel {
+  //   width: 80%;
+  // }
 }
+

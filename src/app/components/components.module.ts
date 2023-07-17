@@ -4,10 +4,12 @@ import { HeaderComponent } from './header/header.component';
 import { SpeakerButtonComponent } from './speaker-button/speaker-button.component';
 import { AttendeeButtonComponent } from './attendee-button/attendee-button.component';
 import { FooterComponent } from './footer/footer.component';
+import { TimerComponent } from './timer/timer.component';
+import { FaqsComponent } from './faqs/faqs.component';
 
 @NgModule({
-  declarations: [HeaderComponent, SpeakerButtonComponent, AttendeeButtonComponent, FooterComponent],
-  exports: [HeaderComponent, SpeakerButtonComponent, AttendeeButtonComponent, FooterComponent],
+  declarations: [HeaderComponent, SpeakerButtonComponent, AttendeeButtonComponent, FooterComponent, TimerComponent, FaqsComponent],
+  exports: [HeaderComponent, SpeakerButtonComponent, AttendeeButtonComponent, FooterComponent, TimerComponent, FaqsComponent],
   imports: [
     CommonModule
   ]
