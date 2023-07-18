@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,21 +9,25 @@ import { Router } from '@angular/router';
 })
 export class AttendeeComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router) {}
 
-  }
-  nameInput = "";
-  emailInput = "";
+  attendeeForm = new FormGroup({
+    email: new FormControl("", [Validators.required, Validators.email]),
+    name: new FormControl("", Validators.required)
+  });
   showSuccessPopUp(){
     let popup = document.getElementById("popup");
+
+    if (this.attendeeForm.invalid) {
+      console.log("Invalid")
+      return;
+    }
 
     if (popup){
       popup.style.opacity = "1";
       popup.style.visibility = "visible"
     }
-
-    this.nameInput = "";
-    this.emailInput = "";
+    this.attendeeForm.reset();
   }
 
   closePopup(){

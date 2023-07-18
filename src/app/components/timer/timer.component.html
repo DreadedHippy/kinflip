@@ -16,7 +16,7 @@
       </div>
       <div class="minutes">
         <div class="counter">
-          <p><span>6</span> <span>0</span></p>
+          <p><span>{{minutes < 10 ? 0 : minutes.toString()[0]}}</span> <span>{{minutes < 10  ? minutes.toString()[0] : minutes.toString()[1]}}</span></p>
         </div>
         <caption>Minutes</caption>
       </div>

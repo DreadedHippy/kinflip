@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
     this.scrollTrigger("#about", {animatedClass: "slide", rootMargin: "-250px"})
     this.scrollTrigger("#stats", {animatedClass: "slide", rootMargin: "-250px"})
     this.scrollTrigger(".speaker", {animatedClass: "reveal", rootMargin: "-250px"})
+    this.scrollTrigger("#register", {animatedClass: "shadeBackground", rootMargin: "-200px"})
   }
 
   scrollTrigger(selector: string, options = {}){

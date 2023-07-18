@@ -1,11 +1,21 @@
 <div id="container">
   <app-timer></app-timer>
-  <form action="" id="speaker-registration-form">
-    <input type="text" placeholder="Name" [(ngModel)]="nameInput" name="nameInput">
-    <input type="email" placeholder="Email Address" [(ngModel)]="emailInput" name="emailInput">
+  <form action="" id="speaker-registration-form" [formGroup]="attendeeForm">
+    <div style="width: 40%;">
+      <input type="text" placeholder="Name" formControlName="name">
+      <div *ngIf="attendeeForm.controls.name.invalid" class="error-text">
+        Please enter name
+      </div>
+    </div>
+    <div style="width: 40%;">
+      <input type="email" placeholder="Email Address" formControlName="email">
+      <div *ngIf="attendeeForm.controls.email.invalid" class="error-text">
+        Please enter a valid email
+      </div>
+    </div>
     <div class="cta">
       <button (click)="showSuccessPopUp()">Register</button>
-      <p>Want to register as an attendee? <a href="">Click here</a></p>
+      <p>Want to register as a speaker? <a href="">Click here</a></p>
     </div>
   </form>
 

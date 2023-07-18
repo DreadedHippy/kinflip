@@ -25,6 +25,13 @@
   p {
     font-family: "Nunito", sans-serif;
     text-transform: uppercase;
+    transition: 0.3s;
+    user-select: none;
+  }
+
+  p:hover {
+    color: $alt;
+    cursor: pointer;
   }
 }
 

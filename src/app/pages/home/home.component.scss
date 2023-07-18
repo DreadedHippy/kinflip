@@ -130,15 +130,18 @@
 
 #sponsors, #partners {
   @include flex(column, space-between, 1em, wrap);
-
-  img {
-    height: 66.67px;
-    object-fit: contain;
-  }
+  margin-bottom: 4em;
 
   .logos {
-    @include flex(row, space-between);
+    @include flex(row, space-between, $wrap: wrap);
     width: 100%;
+
+    img {
+      margin-top: 2em;
+      height: 5em;
+      object-fit: contain;
+      flex: 1 1 21%;
+    }
   }
 
   opacity: 0;
@@ -187,8 +190,11 @@
     filter: blur(15px) contrast(0);
 
     img {
-      object-fit: contain;
+      object-fit: cover;
       width: 20em;
+      height: 22em;
+      border: 2px solid $alt;
+      border-radius: 8px;
     }
 
     .name {
@@ -266,9 +272,15 @@ button#see-more-images {
       font-family: "Nunito", sans-serif;
       flex: 0 0 23%;
 
+      .category-img-container {
+        overflow: hidden;
+      }
+
       img {
         object-fit: cover;
         max-width: 100%;
+        aspect-ratio: 1;
+        transition: 0.7s;
       }
 
       .category-title {
@@ -276,6 +288,7 @@ button#see-more-images {
         font-size: 1.2em;
         margin-bottom: 0px;
         margin-top: 0px;
+        z-index: 30;
       }
 
       .category-description {
@@ -284,6 +297,14 @@ button#see-more-images {
         line-height: 16px;
         margin-top: 0;
         margin-bottom: 0.3em;
+        z-index: 30;
+      }
+    }
+
+    .category:hover {
+      img {
+        transform: scale(1.3);
+        filter: contrast(0.5);
       }
     }
   }
@@ -302,7 +323,7 @@ button#see-more-images {
   @include flex(column, $gap: 1.8em);
   padding-top: 3em;
   padding-bottom: 2em;
-  background-color: #122740;
+  background-color: #fff;
 
   *{
     margin: 0;
@@ -511,8 +532,7 @@ button#see-more-images {
   #sponsors, #partners {
     .logos {
       width: 100%;
-      @include flex(row, space-between);
-      flex-wrap: nowrap;
+      @include flex(row, space-between, $wrap: wrap);
 
       img {
         height: 4em;
@@ -543,6 +563,14 @@ button#see-more-images {
     }
   }
 
+  #stats {
+    @include flex(row, space-around, 1em, $wrap: wrap);
+
+    .stat {
+      flex: 0 1 40%;
+    }
+  }
+
 
   #gallery {
     max-width: 100%;
@@ -556,6 +584,11 @@ button#see-more-images {
 
       .gallery-sub-container {
         max-width: 30%;
+        height: 100%;
+
+        img {
+          object-fit: cover;
+        }
       }
     }
   }
@@ -574,6 +607,7 @@ button#see-more-images {
     img {
       object-fit: contain;
       width: 10em !important;
+      height: 11em !important;
     }
 
     .name {
@@ -664,5 +698,18 @@ button#see-more-images {
     filter: none;
   }
 
+}
+
+.shadeBackground {
+  animation: shade 0.7s ease-out 0s 1 forwards;
+}
+
+@keyframes shade {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background-color: #122740;
+  }
 }
 

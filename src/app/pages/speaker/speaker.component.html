@@ -1,13 +1,56 @@
-<app-timer></app-timer>
-<form action="" id="speaker-registration-form">
-  <input type="text" placeholder="Name">
-  <input type="email" placeholder="Email Address">
-  <input type="tel" placeholder="Phone number">
-  <input type="text" placeholder="Country">
-  <input type="text" placeholder="Name of your brand/label">
-  <input type="text" placeholder="Social media link">
-  <div class="cta">
-    <button type="submit">Register</button>
-    <p>Want to register as an attendee? <a href="">Click here</a></p>
+<div id="container">
+  <app-timer></app-timer>
+  <form action="" id="speaker-registration-form" [formGroup]="speakerForm">
+    <div class="input-container">
+      <input type="text" placeholder="Name" formControlName="name">
+      <div *ngIf="speakerForm.controls.name.invalid" class="error-text">
+        Please enter name
+      </div>
+    </div>
+    <div class="input-container">
+      <input type="text" placeholder="Email Address" formControlName="email">
+      <div *ngIf="speakerForm.controls.email.invalid" class="error-text">
+        Please enter a valid email
+      </div>
+    </div>
+    <div class="input-container">
+      <input type="tel" placeholder="Phone Number" formControlName="phoneNumber">
+      <div *ngIf="speakerForm.controls.phoneNumber.invalid" class="error-text">
+        Please enter name
+      </div>
+    </div>
+    <div class="input-container">
+      <input type="text" placeholder="Country" formControlName="country">
+      <div *ngIf="speakerForm.controls.country.invalid" class="error-text">
+        Please enter name
+      </div>
+    </div>
+    <div class="input-container">
+      <input type="text" placeholder="Name of your brand/label" formControlName="brand">
+      <div *ngIf="speakerForm.controls.brand.invalid" class="error-text">
+        Please enter name
+      </div>
+    </div>
+    <div class="input-container">
+      <input type="text" placeholder="Social media link" formControlName="social">
+      <div *ngIf="speakerForm.controls.social.invalid" class="error-text">
+        Please enter name
+      </div>
+    </div>
+    <div class="cta">
+      <button (click)="showSuccessPopUp()">Register</button>
+      <p>Want to register as an attendee? <a href="">Click here</a></p>
+    </div>
+  </form>
+
+  <div id="popup">
+    <div id="display">
+      <img src="../../../assets/icons/icon-park_success.png" alt="Success icon" id="success-icon">
+      <p color="alt">
+        Congratulations you have successfully signed up as a Speaker for the Kinflip Africa conference!
+        Keep an Eye on your mail for updates
+      </p>
+      <button (click)="closePopup()">Back to home</button>
+    </div>
   </div>
-</form>
+</div>

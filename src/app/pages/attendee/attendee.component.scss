@@ -13,11 +13,17 @@
   margin: 0 auto;
   width: 60%;
 
+  .error-text {
+    color: #eb445a;
+    font-family: 'Nunito', sans-serif;
+  }
+
   input {
     color: #fff;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
     flex: 0 1 40%;
+    width: 100%;
     background-color: transparent;
     border: 1px solid #fff;
     border-radius: 8px;
@@ -90,6 +96,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  position: fixed;
   background-color: #000000ba;
   text-align: center;
   transition: 0.5s;

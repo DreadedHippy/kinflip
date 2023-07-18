@@ -11,11 +11,20 @@
   margin: 0 auto;
   width: 60%;
 
+  .input-container {
+    width: 40%;
+  }
+
+  .error-text {
+    color: #eb445a;
+    font-family: 'Nunito', sans-serif;
+  }
+
   input {
     color: #fff;
     font-family: "Nunito", sans-serif;
     font-weight: 500;
-    flex: 0 1 40%;
+    width: 100%;
     background-color: transparent;
     border: 1px solid #fff;
     border-radius: 8px;
@@ -57,13 +66,33 @@
   margin-top: 2em;
 }
 
+@media (min-width: 480px) and (max-width: 1024px) {
+
+  #speaker-registration-form{
+
+    .input-container{
+      width: 80%;
+    }
+
+    .cta{
+      button{
+        width: 80%;
+      }
+    }
+  }
+
+}
+
 @media (max-width: 480px) {
   #speaker-registration-form {
     width: 100%;
     padding: 0 2em;
 
+    .input-container{
+      width: 90%;
+    }
+
     input {
-      flex: 1 1;
       margin-top: 1em;
     }
 
@@ -78,6 +107,46 @@
         margin-top: 2em;
       }
 
+    }
+  }
+}
+
+
+#popup {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  position: fixed;
+  background-color: #000000ba;
+  text-align: center;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+
+  #display {
+    @include flex(column, space-around);
+    background-color: #261900;
+    width: 60%;
+    height: 50%;
+    margin: 10% auto;
+    align-items: center;
+    padding-bottom: 2em;
+
+    #success-icon {
+      aspect-ratio: 1;
+      width: 100px;
+    }
+
+    p {
+      width: 50%;
+    }
+
+    button {
+      @include button("flat", $alt, #fff, 4px, 1em 2.5em);
+      width: 30%;
+      margin: 0 au
     }
   }
 }
