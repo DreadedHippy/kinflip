@@ -9,11 +9,18 @@
     <app-speaker-button></app-speaker-button>
   </div>
 
-  <select name="registrations" id="registrations">
+  <!-- <select name="registrations" id="registrations">
     <option selected disabled hidden>Register</option>
     <option value="attendee">Register as attendee</option>
     <option value="speaker">Register as speaker</option>
-  </select>
+  </select> -->
+  <div id="registrations">
+    <button class="register-button">Register <img src="../../../assets/icons/chevron-filled.svg" alt=""></button>
+    <div class="register-types">
+      <a href="/attendee">Register as attendee</a>
+      <a href="/speaker">Register as speaker</a>
+    </div>
+  </div>
 
   <button id="menu-button" (click)="openMenu()">
     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
@@ -33,12 +40,12 @@
     </div>
 
     <ul style="list-style-type: none;">
-      <li>Home</li>
-      <li>FAQ</li>
-      <li>Contact Us</li>
-      <li>Newsletter</li>
-      <li>About Us</li>
-      <li>Mission And Vision</li>
+      <li [routerLink]="['/']" routerLinkActive="router-link-active" [fragment]="'hero'" (click)="closeMenu()">Home</li>
+      <li [routerLink]="['/faq']" routerLinkActive="router-link-active" [fragment]="'hero'" (click)="closeMenu()">FAQ</li>
+      <li [routerLink]="['/']" routerLinkActive="router-link-active" [fragment]="'footer'" (click)="closeMenu()">Contact Us</li>
+      <li [routerLink]="['/']" routerLinkActive="router-link-active" [fragment]="'footer'" (click)="closeMenu()">Newsletter</li>
+      <li [routerLink]="['/']" [fragment]="'about'" (click)="closeMenu()">About Us</li>
+      <li [routerLink]="['/']" routerLinkActive="router-link-active" [fragment]="'about'" (click)="closeMenu()">Mission And Vision</li>
     </ul>
 
     <div class="icons">

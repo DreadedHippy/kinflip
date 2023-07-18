@@ -37,21 +37,44 @@
 
 #registrations {
   margin-left: auto;
-  @include button("flat", var(--alt), $padding: 1em 1em, $border-radius: 4px);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 50%;
-  width: 8em;
-  height: 3em;
+  position: relative;
+  display: inline-block;
 
-  option {
-    font-size: 0.4rem;
-    background-color: transparent !important;
-    border: 1px solid black;
+  .register-button {
+    width: 10em;
+    @include button("flat", $alt, $padding: 0.4em 0.1em, $border-radius: 4px);
+    @include flex(row, center, 1em);
+    align-items: center;
   }
+
+  .register-types {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .register-types a {
+    white-space: nowrap;
+    color: #fff;
+    // background-color: #2A2310;
+    border: 1px solid $alt;
+    padding: 0.5em;
+    border-radius: 4px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    margin-top: 0.2em;
+    margin-bottom: 0.1em;
+  }
+
+  .register-types a:hover {background-color: rgb(63, 60, 60)}
+}
+
+#registrations:hover .register-types {
+  display: block;
 }
 
 #menu-button {

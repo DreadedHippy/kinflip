@@ -16,7 +16,7 @@
   }
 
   .error-text {
-    color: #eb445a;
+    color: #ff8401;
     font-family: 'Nunito', sans-serif;
   }
 
@@ -128,11 +128,12 @@
   #display {
     @include flex(column, space-around);
     background-color: #261900;
-    width: 60%;
+    width: max(60%, 350px);
     height: 50%;
     margin: 10% auto;
     align-items: center;
     padding-bottom: 2em;
+    margin: max(100px, 10%) auto;
 
     #success-icon {
       aspect-ratio: 1;
@@ -140,13 +141,15 @@
     }
 
     p {
-      width: 50%;
+      min-width: 200px;
+      width: 80%;
     }
 
     button {
       @include button("flat", $alt, #fff, 4px, 1em 2.5em);
+      min-width: 150px;
       width: 30%;
-      margin: 0 au
+      margin: 0 auto
     }
   }
 }

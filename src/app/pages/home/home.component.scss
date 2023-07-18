@@ -274,6 +274,8 @@ button#see-more-images {
 
       .category-img-container {
         overflow: hidden;
+        max-height: fit-content;
+        padding: 0;
       }
 
       img {
@@ -281,14 +283,15 @@ button#see-more-images {
         max-width: 100%;
         aspect-ratio: 1;
         transition: 0.7s;
+        margin-bottom: 0;
       }
 
       .category-title {
         font-weight: 700;
         font-size: 1.2em;
-        margin-bottom: 0px;
-        margin-top: 0px;
-        z-index: 30;
+        margin-bottom: 0;
+        margin-top: 0;
+        // z-index: 30;
       }
 
       .category-description {
@@ -297,7 +300,6 @@ button#see-more-images {
         line-height: 16px;
         margin-top: 0;
         margin-bottom: 0.3em;
-        z-index: 30;
       }
     }
 
