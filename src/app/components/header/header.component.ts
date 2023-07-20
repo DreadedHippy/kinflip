@@ -18,6 +18,10 @@ export class HeaderComponent{
     }
   }
 
+  goHome(){
+    this.router.navigate(['/'])
+  }
+
   toggleButtonShow(){
     let registerTypes = document.getElementById("register-types");
 
