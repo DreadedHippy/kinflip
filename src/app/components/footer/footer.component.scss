@@ -110,6 +110,15 @@ hr.bottom {
   #mobile-list {
     display: block;
 
+    .icons {
+      @include flex(row, center, $gap: 0.5em);
+
+      img {
+        height: 1.17em;
+        width: 1.17em;
+      }
+    }
+
     ul {
       padding: 0;
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(private router: Router){}
+
   ngOnInit():void {
-    this.scrollTrigger("#sponsors", {animatedClass: "slide", rootMargin: "-200px"})
-    this.scrollTrigger("#partners", {animatedClass: "slide", rootMargin: "-250px"})
-    this.scrollTrigger("#about", {animatedClass: "slide", rootMargin: "-250px"})
-    this.scrollTrigger("#stats", {animatedClass: "slide", rootMargin: "-250px"})
-    this.scrollTrigger(".speaker", {animatedClass: "reveal", rootMargin: "-250px"})
-    this.scrollTrigger("#register", {animatedClass: "shadeBackground", rootMargin: "-200px"})
+    this.scrollTrigger("#sponsors", {animatedClass: "slide", rootMargin: "-100px"})
+    this.scrollTrigger("#partners", {animatedClass: "slide", rootMargin: "-150px"})
+    this.scrollTrigger("#about", {animatedClass: "slide", rootMargin: "-150px"})
+    this.scrollTrigger("#stats", {animatedClass: "slide", rootMargin: "-150px"})
+    this.scrollTrigger(".speaker", {animatedClass: "reveal", rootMargin: "-150px"})
+    this.scrollTrigger("#register", {animatedClass: "shadeBackground", rootMargin: "-100px"})
   }
 
   scrollTrigger(selector: string, options = {}){
@@ -39,6 +42,12 @@ export class HomeComponent implements OnInit {
     // Adding the observer to the element
     observer.observe(el)
   }
+
+
+  register(){
+    this.router.navigate(['/attendee'])
+  }
+
   // Example usage
   // scrollTrigger('.scroll-reveal')
 
