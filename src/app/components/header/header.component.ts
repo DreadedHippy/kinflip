@@ -7,6 +7,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent{
+  isRegisterButtonsShowing = false;
 
   constructor(private router: Router){}
 
@@ -15,6 +16,22 @@ export class HeaderComponent{
       case 1:
         this.router.navigate(['/#home'])
     }
+  }
+
+  toggleButtonShow(){
+    let registerTypes = document.getElementById("register-types");
+
+    if (registerTypes) {
+      // console.log(registerTypes.style.display)
+      if (this.isRegisterButtonsShowing) {
+        registerTypes.style.display = "none"
+      } else {
+        registerTypes.style.display = "block"
+      }
+    }
+
+    this.isRegisterButtonsShowing = !this.isRegisterButtonsShowing
+
   }
 
   openMenu() {

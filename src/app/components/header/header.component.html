@@ -14,9 +14,9 @@
     <option value="attendee">Register as attendee</option>
     <option value="speaker">Register as speaker</option>
   </select> -->
-  <div id="registrations">
+  <div id="registrations" (click)="toggleButtonShow()">
     <button class="register-button">Register <img src="../../../assets/icons/chevron-filled.svg" alt=""></button>
-    <div class="register-types">
+    <div id="register-types">
       <a href="/attendee">Register as attendee</a>
       <a href="/speaker">Register as speaker</a>
     </div>

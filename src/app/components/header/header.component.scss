@@ -47,7 +47,7 @@
     align-items: center;
   }
 
-  .register-types {
+  #register-types {
     display: none;
     position: absolute;
     background-color: transparent;
@@ -56,7 +56,7 @@
     z-index: 1;
   }
 
-  .register-types a {
+  #register-types a {
     white-space: nowrap;
     color: #fff;
     // background-color: #2A2310;
@@ -70,12 +70,13 @@
     margin-bottom: 0.1em;
   }
 
-  .register-types a:hover {background-color: rgb(63, 60, 60)}
+  #register-types a:hover {background-color: rgb(63, 60, 60)}
+
 }
 
-#registrations:hover .register-types {
-  display: block;
-}
+// #registrations:hover #register-types {
+//   display: block;
+// }
 
 #menu-button {
   @include debug;
@@ -169,7 +170,7 @@
 //! MEDIA QUERIES
 
 //? Tablets, Ipad, Portrait Mode
-@media (min-width: 768px) and (max-width: 1024px){
+@media (min-width: 560px) and (max-width: 1024px){
   #navbar {
     display: none;
   }
@@ -180,7 +181,7 @@
 }
 
 //? Media Query for Mobile Devices
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .container {
     padding: 1em 1.5em;
     @include flex(row, $justify: space-between)
@@ -193,6 +194,10 @@
   #menu-button, #menu-icon {
     display: block;
   }
+}
+
+.hide-types {
+  display: block;
 }
 
 
