@@ -1,5 +1,5 @@
 <div class="container">
-  <img src="../../../assets/images/kinflip_logo.png" alt="KinFlip Logo" id="main-logo">
+  <img (click)="goHome()" src="../../../assets/images/kinflip_logo.png" alt="KinFlip Logo" id="main-logo">
   <div id="navbar">
     <p class="nav-item" [routerLink]="['/']" routerLinkActive="router-link-active" [fragment]="'hero'" >Home</p>
     <p class="nav-item" [routerLink]="['/']" routerLinkActive="router-link-active" [fragment]="'hero'" >Contact Us</p>
