@@ -20,7 +20,7 @@ export class TimerComponent implements OnInit{
         counter > 1 ? counter-- : counter = 60;
         count.next(counter)
         // console.log(counter)
-      }, 1000)
+      }, 60000)
     })
     $counter.subscribe((count) => this.minutes = count)
   }
