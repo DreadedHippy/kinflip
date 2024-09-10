@@ -10,7 +10,7 @@
       </div>
       <div class="hours">
         <div class="counter">
-          <p><span>1</span> <span>0</span></p>
+          <p><span>{{hours < 10 ? 0: hours.toString()[0]}}</span> <span>{{hours < 10 ? hours.toString()[0] : hours.toString()[1]}}</span></p>
         </div>
         <caption>Hours</caption>
       </div>
